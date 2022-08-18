@@ -63,7 +63,8 @@ export type NounProfileEventFetcherResponse = {
  */
 const useNounProposalVoteEvents = (nounId: number): NounProfileEventFetcherResponse => {
   const { loading, error, data } = useQuery(nounVotingHistoryQuery(nounId));
-
+  
+  console.log('MYDEBUG999 useNounActivity nounId: ', nounId.toString());
   console.log('MYDEBUG999 useNounActivity loading: ', loading.toString());
   console.log('MYDEBUG999 useNounActivity error: ', error?.toString());
   console.log('MYDEBUG999 useNounActivity data: ', data);
