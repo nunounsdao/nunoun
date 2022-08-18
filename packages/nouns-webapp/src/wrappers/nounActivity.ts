@@ -63,12 +63,7 @@ export type NounProfileEventFetcherResponse = {
  */
 const useNounProposalVoteEvents = (nounId: number): NounProfileEventFetcherResponse => {
   const { loading, error, data } = useQuery(nounVotingHistoryQuery(nounId));
-  
-  console.log('MYDEBUG999 useNounActivity nounId: ', nounId.toString());
-  console.log('MYDEBUG999 useNounActivity loading: ', loading.toString());
-  console.log('MYDEBUG999 useNounActivity error: ', error?.toString());
-  console.log('MYDEBUG999 useNounActivity data: ', data);
-
+ 
   const {
     loading: proposalTimestampLoading,
     error: proposalTimestampError,
@@ -290,6 +285,10 @@ export const useNounActivity = (nounId: number): NounProfileEventFetcherResponse
       error: false,
     };
   }
+
+  console.log('MYDEBUG444 useNounActivity LOADINGVOTES: ', loadingVotes.toString());
+  console.log('MYDEBUG444 useNounActivity LOADINGNOUNTRANSFER: ', loadingNounTransfer.toString());
+  console.log('MYDEBUG444 useNounActivity LOADINGDELEGATIONEVENTS: ', loadingDelegationEvents.toString());
 
   const events = votesData
     ?.concat(nounTransferData)
