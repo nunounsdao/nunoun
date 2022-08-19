@@ -58,7 +58,7 @@ contract NounsToken is INounsToken, Ownable, ERC721Checkpointable {
     uint256 private _currentNounId;
 
     // IPFS content hash of contract-level metadata
-    string private _contractURIHash = 'QmZi1n79FqWt2tTLwCqiy6nLM6xLGRsEPQ5JmReJQKNNzX';
+    string private _contractURIHash = 'QmZsTkAkPd7YLxa2b7TAHZmdHEJTKjsk8ugvZX2G6n2Kfz';
 
     // OpenSea's Proxy Registry
     IProxyRegistry public immutable proxyRegistry;

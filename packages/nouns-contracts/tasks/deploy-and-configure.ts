@@ -1,10 +1,7 @@
 import { task, types } from 'hardhat/config';
 import { printContractsTable } from './utils';
 
-task(
-  'deploy-and-configure',
-  'Deploy and configure all contracts with short gov times for testing',
-)
+task('deploy-and-configure', 'Deploy and configure all contracts')
   .addFlag('startAuction', 'Start the first auction upon deployment completion')
   .addFlag('autoDeploy', 'Deploy all contracts without user interaction')
   .addFlag('updateConfigs', 'Write the deployed addresses to the SDK and subgraph configs')
@@ -13,47 +10,20 @@ task(
   .addOptionalParam(
     'auctionTimeBuffer',
     'The auction time buffer (seconds)',
-    30 /* 30 seconds */,
+    5 * 60 /* 5 minutes */,
     types.int,
   )
-  .addOptionalParam(
-    'auctionReservePrice',
-    'The auction reserve price (wei)',
-    1 /* 1 wei */,
-    types.int,
-  )
+  .addOptionalParam('auctionReservePrice', 'The auction reserve price (wei)')
   .addOptionalParam(
     'auctionMinIncrementBidPercentage',
     'The auction min increment bid percentage (out of 100)',
-    2 /* 2% */,
-    types.int,
   )
-  .addOptionalParam(
-    'auctionDuration',
-    'The auction duration (seconds)',
-    60 * 10 /* 2 minutes */,
-    types.int,
-  )
-  .addOptionalParam('timelockDelay', 'The timelock delay (seconds)', 60 /* 1 min */, types.int)
-  .addOptionalParam(
-    'votingPeriod',
-    'The voting period (blocks)',
-    80 /* 20 min (15s blocks) */,
-    types.int,
-  )
-  .addOptionalParam('votingDelay', 'The voting delay (blocks)', 1, types.int)
-  .addOptionalParam(
-    'proposalThresholdBps',
-    'The proposal threshold (basis points)',
-    100 /* 1% */,
-    types.int,
-  )
-  .addOptionalParam(
-    'quorumVotesBps',
-    'Votes required for quorum (basis points)',
-    1_000 /* 10% */,
-    types.int,
-  )
+  .addOptionalParam('auctionDuration', 'The auction duration (seconds)')
+  .addOptionalParam('timelockDelay', 'The timelock delay (seconds)')
+  .addOptionalParam('votingPeriod', 'The voting period (blocks)')
+  .addOptionalParam('votingDelay', 'The voting delay (blocks)')
+  .addOptionalParam('proposalThresholdBps', 'The proposal threshold (basis points)')
+  .addOptionalParam('quorumVotesBps', 'Votes required for quorum (basis points)')
   .setAction(async (args, { run }) => {
     // Deploy the Nouns DAO contracts and return deployment information
     const contracts = await run('deploy', args);
