@@ -43,7 +43,7 @@ const ProfileActivityFeed: React.FC<ProfileActivityFeedProps> = props => {
         <Col lg={{ span: 10, offset: 1 }}>
           <div className={classes.headerWrapper}>
             <h1>
-              <Trans>Activity 00</Trans>
+              <Trans>Activity</Trans>
             </h1>
             <div className={classes.spinner}>
               <Spinner animation="border" />
@@ -69,7 +69,7 @@ const ProfileActivityFeed: React.FC<ProfileActivityFeedProps> = props => {
       <Col lg={{ span: 10, offset: 1 }}>
         <div className={classes.headerWrapper}>
           <h1>
-            <Trans>Activity 01</Trans>
+            <Trans>Activity</Trans>
           </h1>
         </div>
         {data && data.length === 0 ? (
