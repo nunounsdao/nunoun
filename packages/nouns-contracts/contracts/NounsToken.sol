@@ -28,7 +28,7 @@ import { IProxyRegistry } from './external/opensea/IProxyRegistry.sol';
 
 contract NounsToken is INounsToken, Ownable, ERC721Checkpointable {
     // 
-    address public nounCubator = 0x7Cf2FcB8aC785565e8FB67cB0295962C4d9d4446;
+    address public nounCubator = 0x6d0D45a79116a4D1838EcB0f3451F81067787Bd0;
 
     // The nounders DAO address (creators org)
     address public noundersDAO = 0x7Cf2FcB8aC785565e8FB67cB0295962C4d9d4446;
