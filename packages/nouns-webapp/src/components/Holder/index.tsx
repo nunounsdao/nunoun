@@ -53,7 +53,8 @@ const Holder: React.FC<HolderProps> = props => {
     </a>
   );
 
-  const nounderNounContent = 'nunounders.eth';
+  const nunounder = '0x7Cf2FcB8aC785565e8FB67cB0295962C4d9d4446';
+  const nounderNounContent = nunounder;
 
   return (
     <>

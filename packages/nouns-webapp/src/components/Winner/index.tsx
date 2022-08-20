@@ -60,7 +60,7 @@ const Winner: React.FC<WinnerProps> = props => {
 
   const nounderNounContent = (
     <a
-      href={buildEtherscanAddressLink('nunounders.eth')}
+      href={buildEtherscanAddressLink('0x7Cf2FcB8aC785565e8FB67cB0295962C4d9d4446')}
       target={'_blank'}
       rel="noreferrer"
       className={classes.link}
