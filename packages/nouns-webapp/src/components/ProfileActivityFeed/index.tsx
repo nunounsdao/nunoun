@@ -28,15 +28,13 @@ export interface NounVoteHistory {
 
 const ProfileActivityFeed: React.FC<ProfileActivityFeedProps> = props => {
   const { nounId } = props;
-  console.log('MYDEBUG01 ProfileActivityFeed: ', nounId.toString());
+
   const MAX_EVENTS_SHOW_ABOVE_FOLD = 5;
 
   const [isExpanded, setIsExpanded] = useState(false);
 
   const { loading, error, data } = useNounActivity(nounId);
-  console.log('MYDEBUG02 ProfileActivityFeed Loading: ', loading.toString());
-  console.log('MYDEBUG02 ProfileActivityFeed Error: ', error.toString());
-  console.log('MYDEBUG02 ProfileActivityFeed Data: ', data);
+
   if (loading || !data || data === undefined) {
     return (
       <Section fullWidth={false}>
@@ -62,8 +60,6 @@ const ProfileActivityFeed: React.FC<ProfileActivityFeedProps> = props => {
     );
   }
 
-  console.log('MYDEBUG03 ProfileActivityFeed: ');
-  console.log('MYDEBUG04 ProfileActivityFeed: ');
   return (
     <Section fullWidth={false}>
       <Col lg={{ span: 10, offset: 1 }}>
