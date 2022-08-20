@@ -251,15 +251,8 @@ export const useNounActivity = (nounId: number): NounProfileEventFetcherResponse
     data: delegationEventsData,
   } = useDelegationEvents(nounId);
 
-  console.log('MYDEBUG333 useNounActivity nounId: ', nounId.toString());
-  console.log('MYDEBUG333 useNounActivity loadingVotes: ', loadingVotes.toString());
-  console.log('MYDEBUG333 useNounActivity votesError: ', votesError.toString());
-  console.log('MYDEBUG333 useNounActivity loadingNounTransfer: ', loadingNounTransfer.toString());
-  console.log('MYDEBUG333 useNounActivity nounTransferError: ', nounTransferError.toString());
-  console.log('MYDEBUG333 useNounActivity nounTransferData: ', nounTransferData);
-  console.log('MYDEBUG333 useNounActivity loadingDelegationEvents: ', loadingDelegationEvents.toString());
-  console.log('MYDEBUG333 useNounActivity delegationEventsError: ', delegationEventsError.toString());
-  console.log('MYDEBUG333 useNounActivity delegationEventsData: ', delegationEventsData);
+  console.log('DEBUG useNounActivity nounId: ', nounId.toString());
+  console.log('DEBUG useNounActivity loadingVotes: ', loadingVotes.toString());
   
   if (loadingDelegationEvents || loadingNounTransfer || loadingVotes) {
     return {
@@ -285,10 +278,6 @@ export const useNounActivity = (nounId: number): NounProfileEventFetcherResponse
       error: false,
     };
   }
-
-  console.log('MYDEBUG444 useNounActivity LOADINGVOTES: ', loadingVotes.toString());
-  console.log('MYDEBUG444 useNounActivity LOADINGNOUNTRANSFER: ', loadingNounTransfer.toString());
-  console.log('MYDEBUG444 useNounActivity LOADINGDELEGATIONEVENTS: ', loadingDelegationEvents.toString());
 
   const events = votesData
     ?.concat(nounTransferData)
