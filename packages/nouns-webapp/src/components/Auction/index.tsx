@@ -8,9 +8,12 @@ import { Auction as IAuction } from '../../wrappers/nounsAuction';
 import classes from './Auction.module.css';
 import { INounSeed } from '../../wrappers/nounToken';
 import NounderNounContent from '../NounderNounContent';
+import NouncubatorNounContent from '../NouncubatorNounContent';
 import { useHistory } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { isNounderNoun } from '../../utils/nounderNoun';
+import { isNouncubatorNoun } from '../../utils/nouncubatorNoun';
+
 import {
   setNextOnDisplayAuctionNounId,
   setPrevOnDisplayAuctionNounId,
@@ -92,6 +95,16 @@ const Auction: React.FC<AuctionProps> = props => {
       onNextAuctionClick={nextAuctionHandler}
     />
   );
+  const nouncubatorNounContent = currentAuction && lastNounId && (
+    <NouncubatorNounContent
+      mintTimestamp={currentAuction.startTime}
+      nounId={currentAuction.nounId}
+      isFirstAuction={currentAuction.nounId.eq(0)}
+      isLastAuction={currentAuction.nounId.eq(lastNounId)}
+      onPrevAuctionClick={prevAuctionHandler}
+      onNextAuctionClick={nextAuctionHandler}
+    />
+  );
 
   return (
     <div style={{ backgroundColor: stateBgColor }} className={classes.wrapper}>
@@ -102,9 +115,7 @@ const Auction: React.FC<AuctionProps> = props => {
           </Col>
           <Col lg={{ span: 6 }} className={classes.auctionActivityCol}>
             {currentAuction &&
-              (isNounderNoun(currentAuction.nounId)
-                ? nounderNounContent
-                : currentAuctionActivityContent)}
+              (isNounderNoun(currentAuction.nounId) ? nounderNounContent : (isNouncubatorNoun(currentAuction.nounId) ? nouncubatorNounContent : currentAuctionActivityContent) )}
           </Col>
         </Row>
       </Container>

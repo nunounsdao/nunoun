@@ -27,7 +27,7 @@ import { IERC721 } from '@openzeppelin/contracts/token/ERC721/IERC721.sol';
 import { IProxyRegistry } from './external/opensea/IProxyRegistry.sol';
 
 contract NounsToken is INounsToken, Ownable, ERC721Checkpointable {
-    // 
+    //
     address public nounCubator = 0x6d0D45a79116a4D1838EcB0f3451F81067787Bd0;
 
     // The nounders DAO address (creators org)
@@ -96,6 +96,14 @@ contract NounsToken is INounsToken, Ownable, ERC721Checkpointable {
     }
 
     /**
+     * @notice Require that the sender is the nounCubator.
+     */
+    modifier onlyNounCubator() {
+        require(msg.sender == nounCubator, 'Sender is not the nounCubator');
+        _;
+    }
+
+    /**
      * @notice Require that the sender is the minter.
      */
     modifier onlyMinter() {
@@ -105,12 +113,14 @@ contract NounsToken is INounsToken, Ownable, ERC721Checkpointable {
 
     constructor(
         address _noundersDAO,
+        address _nounCubator,
         address _minter,
         INounsDescriptorMinimal _descriptor,
         INounsSeeder _seeder,
         IProxyRegistry _proxyRegistry
     ) ERC721('Nouns', 'NOUN') {
         noundersDAO = _noundersDAO;
+        nounCubator = _nounCubator;
         minter = _minter;
         descriptor = _descriptor;
         seeder = _seeder;
@@ -144,15 +154,18 @@ contract NounsToken is INounsToken, Ownable, ERC721Checkpointable {
     }
 
     /**
-     * @notice Mint a Noun to the minter, along with a possible nounders reward
-     * Noun. Nounders reward Nouns are minted every 10 Nouns, starting at 0,
-     * until 1461 nounder Nouns have been minted (5 years w/ 180 minutes auctions).
+     * @notice Mint a Noun to the minter, along with a possible nounders and nouncubator reward
+     * Noun. Nounders and nouncubator reward Nouns are minted every 10 && 11 Nouns, starting at 0 && 1,
+     * until 1462 nounder && nouncubator Nouns have been minted respectively (5 years w/ 180 minutes auctions each).
      * @dev Call _mintTo with the to address(es).
      */
+    
     function mint() public override onlyMinter returns (uint256) {
+        //every 10th to nounCubator
         if (_currentNounId <= 14610 && _currentNounId % 10 == 0) {
             _mintTo(noundersDAO, _currentNounId++);
         }
+
         //every 11th to nounCubator
         if (_currentNounId <= 14611 && _currentNounId % 10 == 1) {
             _mintTo(nounCubator, _currentNounId++);
@@ -197,8 +210,14 @@ contract NounsToken is INounsToken, Ownable, ERC721Checkpointable {
         emit NoundersDAOUpdated(_noundersDAO);
     }
 
-    function setnounCubator(address _nounCubator) external onlyNoundersDAO {
+    /**
+     * @notice Set the nounCubator.
+     * @dev Only callable by the nounCubator when not locked.
+     */
+    function setNounCubator(address _nounCubator) external override onlyNounCubator {
         nounCubator = _nounCubator;
+
+        emit NounCubatorUpdated(_nounCubator);
     }
 
     /**

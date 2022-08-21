@@ -13,10 +13,11 @@ import Tooltip from '../Tooltip';
 interface WinnerProps {
   winner: string;
   isNounders?: boolean;
+  isNouncubator?: boolean;
 }
 
 const Winner: React.FC<WinnerProps> = props => {
-  const { winner, isNounders } = props;
+  const { winner, isNounders, isNouncubator } = props;
   const activeAccount = useAppSelector(state => state.account.activeAccount);
 
   const isCool = useAppSelector(state => state.application.isCoolBackground);
@@ -77,6 +78,25 @@ const Winner: React.FC<WinnerProps> = props => {
     </a>
   );
 
+  const nouncubatorNounContent = (
+    <a
+      href={buildEtherscanAddressLink('0x6d0D45a79116a4D1838EcB0f3451F81067787Bd0')}
+      target={'_blank'}
+      rel="noreferrer"
+      className={classes.link}
+    >
+      <Tooltip
+        tip="View on Etherscan"
+        tooltipContent={(tip: string) => {
+          return <Trans>View on Etherscan</Trans>;
+        }}
+        id="holder-etherscan-tooltip"
+      >
+        nouncubator.eth
+      </Tooltip>
+    </a>
+  );
+
   return (
     <>
       <Row className={clsx(classes.wrapper, classes.section)}>
@@ -97,7 +117,8 @@ const Winner: React.FC<WinnerProps> = props => {
               color: isCool ? 'var(--brand-cool-dark-text)' : 'var(--brand-warm-dark-text)',
             }}
           >
-            {isNounders ? nounderNounContent : nonNounderNounContent}
+            {isNounders ? nounderNounContent : (isNouncubator ? nouncubatorNounContent : nonNounderNounContent) }
+            
           </h2>
         </Col>
       </Row>

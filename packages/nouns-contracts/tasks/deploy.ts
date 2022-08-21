@@ -1,3 +1,7 @@
+/* OBSERVATION!!! This is the short-times configuration*/
+/* OBSERVATION!!! This is the short-times configuration*/
+/* OBSERVATION!!! This is the short-times configuration*/
+
 import { default as NounsAuctionHouseABI } from '../abi/contracts/NounsAuctionHouse.sol/NounsAuctionHouse.json';
 import { ChainId, ContractDeployment, ContractName, DeployedContract } from './types';
 import { Interface } from 'ethers/lib/utils';
@@ -27,7 +31,8 @@ task('deploy', 'Deploys NFTDescriptor, NounsDescriptor, NounsSeeder, and NounsTo
   .addFlag('autoDeploy', 'Deploy all contracts without user interaction')
   .addOptionalParam('weth', 'The WETH contract address', undefined, types.string)
   .addOptionalParam('noundersdao', 'The nounders DAO contract address', '0x7Cf2FcB8aC785565e8FB67cB0295962C4d9d4446', types.string)
-  .addOptionalParam(
+  .addOptionalParam('nouncubator', 'The nounders DAO contract address', '0x6d0D45a79116a4D1838EcB0f3451F81067787Bd0')
+.addOptionalParam(
     'auctionTimeBuffer',
     'The auction time buffer (seconds)',
     30 /* 30 seconds */,
@@ -77,12 +82,18 @@ task('deploy', 'Deploys NFTDescriptor, NounsDescriptor, NounsSeeder, and NounsTo
 
     // prettier-ignore
     const proxyRegistryAddress = proxyRegistries[network.chainId] ?? proxyRegistries[ChainId.Rinkeby];
-
+    
     if (!args.noundersdao) {
       console.log(
         `Nounders DAO address not provided. Setting to deployer (${deployer.address})...`,
       );
       args.noundersdao = deployer.address;
+    }
+    if (!args.nouncubator) {
+      console.log(
+        `Nouncubator address not provided. Setting to deployer (${deployer.address})...`,
+      );
+      args.nouncubator = deployer.address;
     }
     if (!args.weth) {
       const deployedWETHContract = wethContracts[network.chainId];
@@ -127,7 +138,7 @@ task('deploy', 'Deploys NFTDescriptor, NounsDescriptor, NounsSeeder, and NounsTo
       NounsSeeder: {},
       NounsToken: {
         args: [
-          args.noundersdao,
+          args.noundersdao, args.nouncubator,
           expectedAuctionHouseProxyAddress,
           () => deployment.NounsDescriptorV2.address,
           () => deployment.NounsSeeder.address,
@@ -173,7 +184,7 @@ task('deploy', 'Deploys NFTDescriptor, NounsDescriptor, NounsSeeder, and NounsTo
         args: [
           () => deployment.NounsDAOExecutor.address,
           () => deployment.NounsToken.address,
-          args.noundersdao,
+          args.noundersdao, 
           () => deployment.NounsDAOExecutor.address,
           () => deployment.NounsDAOLogicV1.address,
           args.votingPeriod,

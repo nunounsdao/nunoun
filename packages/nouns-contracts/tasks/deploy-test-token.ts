@@ -19,6 +19,7 @@ task('deploy-test-token', 'Deploy NounsTokenHarness given a descriptor')
     ).deploy(
       deployer.address,
       deployer.address,
+      deployer.address,
       descriptorAddress,
       seederAddress,
       proxyRegistryAddress,
@@ -36,6 +37,7 @@ task('deploy-test-token', 'Deploy NounsTokenHarness given a descriptor')
         name: 'NounsTokenHarness',
         address: token.address,
         constructorArguments: [
+          deployer.address,
           deployer.address,
           deployer.address,
           descriptorAddress,

@@ -1,3 +1,7 @@
+/* OBSERVATION!!! This is the short-times configuration*/
+/* OBSERVATION!!! This is the short-times configuration*/
+/* OBSERVATION!!! This is the short-times configuration*/
+
 import { task, types } from 'hardhat/config';
 import { printContractsTable } from './utils';
 
@@ -10,6 +14,7 @@ task(
   .addFlag('updateConfigs', 'Write the deployed addresses to the SDK and subgraph configs')
   .addOptionalParam('weth', 'The WETH contract address')
   .addOptionalParam('noundersdao', 'The nounders DAO contract address', '0x7Cf2FcB8aC785565e8FB67cB0295962C4d9d4446')
+  .addOptionalParam('nouncubator', 'The nounders DAO contract address', '0x6d0D45a79116a4D1838EcB0f3451F81067787Bd0')
   .addOptionalParam(
     'auctionTimeBuffer',
     'The auction time buffer (seconds)',

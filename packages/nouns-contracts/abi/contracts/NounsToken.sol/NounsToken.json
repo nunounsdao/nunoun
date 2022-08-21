@@ -8,6 +8,11 @@
       },
       {
         "internalType": "address",
+        "name": "_nounCubator",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
         "name": "_minter",
         "type": "address"
       },
@@ -238,6 +243,19 @@
       }
     ],
     "name": "NoundersDAOUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "nounCubator",
+        "type": "address"
+      }
+    ],
+    "name": "NounCubatorUpdated",
     "type": "event"
   },
   {
@@ -754,6 +772,19 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "nounCubator",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "address",
@@ -993,6 +1024,19 @@
       }
     ],
     "name": "setNoundersDAO",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_nounCubator",
+        "type": "address"
+      }
+    ],
+    "name": "setNounCubator",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

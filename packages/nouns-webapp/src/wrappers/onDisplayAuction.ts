@@ -1,6 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { useAppSelector } from '../hooks';
 import { generateEmptyNounderAuction, isNounderNoun } from '../utils/nounderNoun';
+import { generateEmptyNouncubatorAuction, isNouncubatorNoun } from '../utils/nouncubatorNoun';
 import { Bid, BidEvent } from '../utils/types';
 import { Auction } from './nounsAuction';
 
@@ -62,6 +63,16 @@ const useOnDisplayAuction = (): Auction | undefined => {
     );
 
     return deserializeAuction(emptyNounderAuction);
+  }
+
+  // nouncubator auction
+  if (isNouncubatorNoun(BigNumber.from(onDisplayAuctionNounId))) {
+    const emptyNouncubatorAuction = generateEmptyNouncubatorAuction(
+      BigNumber.from(onDisplayAuctionNounId),
+      pastAuctions,
+    );
+
+    return deserializeAuction(emptyNouncubatorAuction);
   }
 
   // past auction
