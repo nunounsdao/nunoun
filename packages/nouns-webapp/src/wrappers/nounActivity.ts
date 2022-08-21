@@ -250,9 +250,6 @@ export const useNounActivity = (nounId: number): NounProfileEventFetcherResponse
     error: delegationEventsError,
     data: delegationEventsData,
   } = useDelegationEvents(nounId);
-
-  console.log('DEBUG useNounActivity nounId: ', nounId.toString());
-  console.log('DEBUG useNounActivity loadingVotes: ', loadingVotes.toString());
   
   if (loadingDelegationEvents || loadingNounTransfer || loadingVotes) {
     return {
@@ -285,7 +282,7 @@ export const useNounActivity = (nounId: number): NounProfileEventFetcherResponse
     .sort((a: NounProfileEvent, b: NounProfileEvent) => a.blockNumber - b.blockNumber)
     .reverse();
 
-  const postProcessedEvents = events.slice(0, events.length - (nounId % 10 === 0 ? 2 : 4));
+  const postProcessedEvents = events.slice(0, events.length - (nounId % 10 === 0 || nounId % 10 === 1 ? 2 : 4));
 
   // Wrap this line in a try-catch to prevent edge case
   // where excessive spamming to left / right keys can cause transfer
@@ -294,10 +291,10 @@ export const useNounActivity = (nounId: number): NounProfileEventFetcherResponse
     // Parse noun birth + win events into a single event
     const nounTransferFromAuctionHouse = nounTransferData.sort(
       (a: NounProfileEvent, b: NounProfileEvent) => a.blockNumber - b.blockNumber,
-    )[nounId % 10 === 0 ? 0 : 1].payload as TransferEvent;
+    )[nounId % 10 === 0 || nounId % 10 === 1  ? 0 : 1].payload as TransferEvent;
     const nounTransferFromAuctionHouseBlockNumber = nounTransferData.sort(
       (a: NounProfileEvent, b: NounProfileEvent) => a.blockNumber - b.blockNumber,
-    )[nounId % 10 === 0 ? 0 : 1].blockNumber;
+    )[nounId % 10 === 0 || nounId % 10 === 1 ? 0 : 1].blockNumber;
 
     const nounWinEvent = {
       nounId: nounId,
