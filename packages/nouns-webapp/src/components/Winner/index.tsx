@@ -117,7 +117,8 @@ const Winner: React.FC<WinnerProps> = props => {
               color: isCool ? 'var(--brand-cool-dark-text)' : 'var(--brand-warm-dark-text)',
             }}
           >
-            {isNounders ? nounderNounContent : (isNouncubator ? nouncubatorNounContent : nonNounderNounContent) }
+            
+            {isNounders ? nounderNounContent : isNouncubator ? nouncubatorNounContent : nonNounderNounContent}
             
           </h2>
         </Col>
