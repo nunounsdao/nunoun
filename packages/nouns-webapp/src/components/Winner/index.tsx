@@ -59,9 +59,10 @@ const Winner: React.FC<WinnerProps> = props => {
     <ShortAddress size={40} address={winner} avatar={true} />
   );
 
+  const nunoundersdao = '0x7Cf2FcB8aC785565e8FB67cB0295962C4d9d4446';
   const nounderNounContent = (
     <a
-      href={buildEtherscanAddressLink('0x7Cf2FcB8aC785565e8FB67cB0295962C4d9d4446')}
+      href={buildEtherscanAddressLink(nunoundersdao)}
       target={'_blank'}
       rel="noreferrer"
       className={classes.link}
@@ -78,9 +79,10 @@ const Winner: React.FC<WinnerProps> = props => {
     </a>
   );
 
+  const nouncubator = '0x6d0D45a79116a4D1838EcB0f3451F81067787Bd0';
   const nouncubatorNounContent = (
     <a
-      href={buildEtherscanAddressLink('0x6d0D45a79116a4D1838EcB0f3451F81067787Bd0')}
+      href={buildEtherscanAddressLink(nouncubator)}
       target={'_blank'}
       rel="noreferrer"
       className={classes.link}
