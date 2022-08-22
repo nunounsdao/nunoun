@@ -1,16 +1,16 @@
 {
   "network": "mainnet",
   "nounsToken": {
-    "address": "0xF5331380e1d19757388A6E6198BF3BDc93D8b07a",
-    "startBlock": 15280197
+    "address": "0x5e292Bc375c5524B5c352A3A080D03817356E549",
+    "startBlock": 15387019
   },
   "nounsAuctionHouse": {
-    "address": "0xfAa4bbe589a39745833e2BecE8d401b6195A07b1",
-    "startBlock": 15280197
+    "address": "0x2E1D51101022513e0A68D690B77663917fe23c3b",
+    "startBlock": 15387019
   },
   "nounsDAO": {
-    "address": "0xF72FAf0050a2cBb645362452a12d46EAdCC09177",
-    "startBlock": 15280197
+    "address": "0xb915ec566e47adA1b34B32ACab7966EB36C514f9",
+    "startBlock": 15387019
   }
 }
 
