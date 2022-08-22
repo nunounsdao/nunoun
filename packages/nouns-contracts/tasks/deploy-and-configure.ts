@@ -1,7 +1,3 @@
-/* OBSERVATION!!! This is the short-times configuration*/
-/* OBSERVATION!!! This is the short-times configuration*/
-/* OBSERVATION!!! This is the short-times configuration*/
-
 import { task, types } from 'hardhat/config';
 import { printContractsTable } from './utils';
 
@@ -13,12 +9,12 @@ task(
   .addFlag('autoDeploy', 'Deploy all contracts without user interaction')
   .addFlag('updateConfigs', 'Write the deployed addresses to the SDK and subgraph configs')
   .addOptionalParam('weth', 'The WETH contract address')
-  .addOptionalParam('noundersdao', 'The nounders DAO contract address', '0x7Cf2FcB8aC785565e8FB67cB0295962C4d9d4446')
-  .addOptionalParam('nouncubator', 'The nounders DAO contract address', '0x6d0D45a79116a4D1838EcB0f3451F81067787Bd0')
+  .addOptionalParam('noundersdao', 'The nounders DAO contract address', '0x6F22c27d0310EdDd9b119c372E2eb623902f8d20')
+  .addOptionalParam('nouncubator', 'The nounders DAO contract address', '0x57350814ce457E16025771AB4dC17359429d72B8')
   .addOptionalParam(
     'auctionTimeBuffer',
     'The auction time buffer (seconds)',
-    30 /* 30 seconds */,
+    2 * 60 /* 2 minutes */,
     types.int,
   )
   .addOptionalParam(
@@ -36,17 +32,27 @@ task(
   .addOptionalParam(
     'auctionDuration',
     'The auction duration (seconds)',
-    60 * 10 /* 2 minutes */,
+    60 * 60 * 3 /* 3 hours */,
     types.int,
   )
-  .addOptionalParam('timelockDelay', 'The timelock delay (seconds)', 60 /* 1 min */, types.int)
+  .addOptionalParam(
+    'timelockDelay',
+    'The timelock delay (seconds)',
+    60 * 60 * 24 * 2 /* 2 days */,
+    types.int,
+  )
   .addOptionalParam(
     'votingPeriod',
     'The voting period (blocks)',
-    80 /* 20 min (15s blocks) */,
+    Math.round(4 * 60 * 24 * (60 / 13)) /* 4 days (13s blocks) */,
     types.int,
   )
-  .addOptionalParam('votingDelay', 'The voting delay (blocks)', 1, types.int)
+  .addOptionalParam(
+    'votingDelay',
+    'The voting delay (blocks)',
+    Math.round(3 * 60 * 24 * (60 / 13)) /* 3 days (13s blocks) */,
+    types.int,
+  )
   .addOptionalParam(
     'proposalThresholdBps',
     'The proposal threshold (basis points)',
