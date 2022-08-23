@@ -27,7 +27,7 @@ task('deploy', 'Deploys NFTDescriptor, NounsDescriptor, NounsSeeder, and NounsTo
   .addFlag('autoDeploy', 'Deploy all contracts without user interaction')
   .addOptionalParam('weth', 'The WETH contract address', undefined, types.string)
   .addOptionalParam('noundersdao', 'The nounders DAO contract address', '0x6F22c27d0310EdDd9b119c372E2eb623902f8d20', types.string)
-  .addOptionalParam('nouncubator', 'The nounders DAO contract address', '0x57350814ce457E16025771AB4dC17359429d72B8')
+  .addOptionalParam('nouncubator', 'The nouncubator contract address', '0x57350814ce457E16025771AB4dC17359429d72B8')
   .addOptionalParam(
     'auctionTimeBuffer',
     'The auction time buffer (seconds)',
