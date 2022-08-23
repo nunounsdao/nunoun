@@ -48,11 +48,12 @@ const Documentation = () => {
               nuNouns are just like Nouns, but nuer!
             </Trans>
             <br />
+            <br />
             <Trans>
-              An expansion DAO based on {nounsdaoLink}, nuNounsDAO works to create a new layer within
-              the Nouns ecosystem; Nouns as human kids. By expanding the ecosystem, nuNounsDAO aims at
-              exposing more people to Nouns.
+              An expansion DAO based on {nounsdaoLink}, nuNounsdao aims to broaden the nounish community by providing representational
+              characters, humanising Nouns to capture the inner child within us all.
             </Trans>
+            <br />
           </p>
           <p className={classes.aboutText} style={{ paddingBottom: '4rem' }}>
             <Trans>
@@ -370,11 +371,10 @@ const Documentation = () => {
                   <Link text="@defnullx" url="https://twitter.com/defnullx" leavesPage={true} />
                 </li>
                 <li>
-                  <Link
-                    text="@Streetstaker"
-                    url="https://twitter.com/streetstaker"
-                    leavesPage={true}
-                  />
+                  <Link text="@Streetstaker" url="https://twitter.com/streetstaker" leavesPage={true}/>
+                </li>
+                <li>
+                  <Link text="@metadavideth" url="https://twitter.com/metadavideth" leavesPage={true}/>
                 </li>
               </ul>
               <p>
@@ -410,7 +410,7 @@ const Documentation = () => {
               </p>
               <p>
                 <Trans>
-                  nuNouns extensions distributions don't interfere with the cadence of 180 minutes auctions.
+                  nounCubator distributions don't interfere with the cadence of 180 minutes auctions.
                   nuNouns are sent directly to the NounCubator multisig, and auctions continue on schedule
                   with the next available nuNoun ID.
                 </Trans>

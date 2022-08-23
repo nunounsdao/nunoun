@@ -109,7 +109,7 @@ const NounderNounContent: React.FC<{
               <Trans>
                 For this reason, we, the project's founders (‘nuNounders’) have chosen to compensate
                 ourselves with nuNouns. Every 10th nuNoun for the first 5 years of the project will be
-                sent to our multisig (5/10), where it will be vested and distributed to individual
+                sent to our multisig, where it will be vested and distributed to individual
                 nuNounders.
               </Trans>
             </li>
@@ -120,7 +120,7 @@ const NounderNounContent: React.FC<{
             }
           >
             <Link
-              to="/nunounders"
+              to="/nounders"
               className={isCool ? bidBtnClasses.bidHistoryCool : bidBtnClasses.bidHistoryWarm}
             >
               <Trans>Learn more</Trans> →

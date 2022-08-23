@@ -43,7 +43,7 @@ const nounsProtocolLink = (
 const nuNounsAssetsLink = (
   <Link
     text="nuNouns-assets"
-    url="https://github.com/nunounsdao/nunouns-monorepo/tree/master/packages/nouns-assets"
+    url="https://github.com/nunounsdao/nunoun/tree/master/packages/nouns-assets"
     leavesPage={true}
   />
 );

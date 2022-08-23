@@ -58,8 +58,8 @@ const NounersPage = () => {
           <h3>Start Here</h3>
           <Col style={{ textAlign: 'justify' }}>
             Basic information, major announcements, and user verification. If you just bought a
-            Noun, you will need to verify your ownership in the #verify channel to get added to the
-            green "nuNouner" role of the server.
+            nuNoun, you will need to verify your ownership in the #verify channel to get added to the
+             "nuNouner" role of the server.
           </Col>
           <br />
 
@@ -72,7 +72,7 @@ const NounersPage = () => {
           <br />
           
           <a
-            href={`https://discord.com/channels/954142017556979752/954142017556979755`}
+            href={`https://discord.com/channels/912148687193522198/1010471395186184282`}
             target="_blank"
             rel="noreferrer"
             className={classes.boldText}
@@ -86,7 +86,7 @@ const NounersPage = () => {
           <br />
 
           <a
-            href={`https://discord.com/channels/954142017556979752/954146402039119932`}
+            href={`https://discord.com/channels/912148687193522198/1010465197967810650`}
             target="_blank"
             rel="noreferrer"
             className={classes.boldText}
@@ -104,20 +104,20 @@ const NounersPage = () => {
           <br />
 
           <a
-            href={`https://discord.com/channels/954142017556979752/954146446603583558`}
+            href={`https://discord.com/channels/912148687193522198/1009566459434893392`}
             target="_blank"
             rel="noreferrer"
             className={classes.boldText}
           >
-            #dao-security
+            #auctions
           </a>
           <Col style={{ textAlign: 'justify' }}>
-            Discussion about potential vulnerabilities, whether smart contract or incentive based.
+            Discussion and questions about auctions.
           </Col>
           <br />
 
           <a
-            href={`https://discord.com/channels/954142017556979752/966075869674213416`}
+            href={`https://discord.com/channels/912148687193522198/1011439650461732874`}
             target="_blank"
             rel="noreferrer"
             className={classes.boldText}
@@ -146,12 +146,12 @@ const NounersPage = () => {
           <br />
 
           <a
-            href={`https://discord.com/channels/954142017556979752/954146487779078254`}
+            href={`https://discord.com/channels/912148687193522198/1010470038194622504`}
             target="_blank"
             rel="noreferrer"
             className={classes.boldText}
           >
-            #general
+            #dao-general
           </a>
           <Col style={{ textAlign: 'justify' }}>
             The most active channel, and the other are topic specific. Non-members often post in
@@ -159,35 +159,7 @@ const NounersPage = () => {
           </Col>
           <br />
 
-          <h3>Voice Channels</h3>
-          <a
-            href={`https://discord.com/channels/954142017556979752/965642796289654804`}
-            target="_blank"
-            rel="noreferrer"
-            className={classes.boldText}
-          >
-            #voice-public
-          </a>
-          <Col style={{ textAlign: 'justify' }}>
-            This is often used when someone is making a presentation intended for everyone and
-            anyone to see
-          </Col>
-          <br />
-
-          <a
-            href={`https://discord.com/channels/954142017556979752/966076040122355732`}
-            target="_blank"
-            rel="noreferrer"
-            className={classes.boldText}
-          >
-            #voice-private
-          </a>
-          <Col style={{ textAlign: 'justify' }}>
-            This is for the nuNouns DAO Members Weekly Town Hall call (date and time TBD)
-            Proposal Process: to be done - info on how a proposal is born, gets vetted, gets
-            enacted, and how nuNouners can help
-          </Col>
-          <br />
+          
           
       </Col>
     </Section>
