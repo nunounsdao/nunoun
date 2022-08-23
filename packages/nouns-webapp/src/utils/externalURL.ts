@@ -14,6 +14,6 @@ export const externalURL = (externalURL: ExternalURL) => {
     case ExternalURL.notion:
       return 'https://nounpunks.notion.site/nounpunks/Welcome-to-nuNouns-6bd35761417e49dcb3e2c02c83d4e7eb';
     case ExternalURL.discourse:
-      return 'https://discourse.nunouns.wtf/';
+      return 'https://discourse.nunoun.wtf/';
   }
 };

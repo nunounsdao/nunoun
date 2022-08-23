@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "A subgraph that indexes nunouns events",
   "author": "nuNounders",
-  "homepage": "https://nunouns.wtf",
+  "homepage": "https://nunoun.wtf",
   "license": "CC0",
   "main": "build/index.js",
   "directories": {

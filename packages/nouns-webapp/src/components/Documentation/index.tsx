@@ -17,7 +17,7 @@ const Documentation = () => {
   const PlaygroundLink = (
     <Link
       text={<Trans>nuPlayground</Trans>}
-      url="https://www.nunouns.wtf/Playground"
+      url="https://www.nunoun.wtf/Playground"
       leavesPage={true}
     />
   );
