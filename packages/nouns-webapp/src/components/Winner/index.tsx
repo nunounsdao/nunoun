@@ -43,7 +43,7 @@ const Winner: React.FC<WinnerProps> = props => {
       {!isMobile && (
         <Col>
           <a
-            href="https://nunoun.wtf/nunouners"
+            href="https://nunouns.wtf/nunouners"
             target="_blank"
             rel="noreferrer noopener"
             className={classes.verifyLink}
@@ -127,7 +127,7 @@ const Winner: React.FC<WinnerProps> = props => {
       {isWinnerYou && isMobile && (
         <Row>
           <a
-            href="https://nunoun.wtf/nunouners"
+            href="https://nunouns.wtf/nunouners"
             target="_blank"
             rel="noreferrer noopener"
             className={classes.verifyLink}

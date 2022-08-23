@@ -55,7 +55,7 @@ const WalletConnectModal: React.FC<{ onDismiss: () => void }> = props => {
         onClick={() => {
           const walletlink = new WalletLinkConnector({
             appName: 'nuNoun.WTF',
-            appLogoUrl: 'https://nunoun.wtf/static/media/logo.cdea1650.svg',
+            appLogoUrl: 'https://nunouns.wtf/static/media/logo.cdea1650.svg',
             url: config.app.jsonRpcUri,
             supportedChainIds,
           });
@@ -88,7 +88,7 @@ const WalletConnectModal: React.FC<{ onDismiss: () => void }> = props => {
           const trezor = new TrezorConnector({
             chainId: CHAIN_ID,
             url: config.app.jsonRpcUri,
-            manifestAppUrl: 'https://nunoun.wtf',
+            manifestAppUrl: 'https://nunouns.wtf',
             manifestEmail: 'nounops+trezorconnect@protonmail.com',
           });
           activate(trezor);
