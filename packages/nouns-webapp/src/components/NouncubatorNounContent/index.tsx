@@ -101,11 +101,7 @@ const NouncubatorNounContent: React.FC<{
                 ` ${nounContentClasses.bidRow}`
               }
             >
-              <Trans>All nuNoun auction proceeds are sent to the</Trans>{' '}
-              <Link to="/vote" className={nounContentClasses.link}>
-                <Trans>nuNouns DAO</Trans>
-              </Link>
-              .{' '}
+              
               <Trans>
                 being passionate proliferators of cc0, nuNounders have chosen to allocate other Nouns extensions with nuNouns. Every 11th nuNoun for the first 5 years of the project ( nuNoun ids #1, #11, #21, #31 and so on) will be automatically sent to the Nouncubator to be utilized collectively as a governance tool to push and support extension projects even further.
               </Trans>
