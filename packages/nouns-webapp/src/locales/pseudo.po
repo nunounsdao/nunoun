@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: src/components/Documentation/index.tsx
-msgid "'nuNounders' are the group of ten builders that initiated nuNouns. Here are the nuNounders:"
+msgid "'nuNounders' are the group of builders that initiated nuNouns. Here are the nuNounders:"
 msgstr ""
 
 #: src/components/ByLineHoverCard/index.tsx
