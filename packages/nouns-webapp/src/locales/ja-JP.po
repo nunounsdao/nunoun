@@ -18,8 +18,8 @@ msgid "nuNouns are just like Nouns, but nuer!"
 msgstr "nuNouns are just like Nouns, but nuer!"
 
 #: src/components/Documentation/index.tsx
-msgid "An expansion DAO based on {nounsdaoLink}, nuNounsDAO works to create a new layer within the Nouns ecosystem; Nouns as human kids. By expanding the ecosystem, nuNounsDAO aims at exposing more people to Nouns."
-msgstr "An expansion DAO based on {nounsdaoLink}, nuNounsDAO works to create a new layer within the Nouns ecosystem; Nouns as human kids. By expanding the ecosystem, nuNounsDAO aims at exposing more people to Nouns."
+msgid "An expansion DAO based on {nounsdaoLink}, nuNounsdao aims to broaden the nounish community by providing representational characters, humanising Nouns to capture the inner child within us all."
+msgstr "An expansion DAO based on {nounsdaoLink}, nuNounsdao aims to broaden the nounish community by providing representational characters, humanising Nouns to capture the inner child within us all."
 
 #: src/components/Documentation/index.tsx
 msgid "Learn more below, or start creating nuNouns off-chain using the {PlaygroundLink}."
