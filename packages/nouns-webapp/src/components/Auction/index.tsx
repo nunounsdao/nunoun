@@ -33,8 +33,6 @@ const Auction: React.FC<AuctionProps> = props => {
   const lastNounId = useAppSelector(state => state.onDisplayAuction.lastAuctionNounId);
 
   const loadedNounHandler = (seed: INounSeed) => {
-    console.log('Auction seed.background: ', seed.background.toString());
-
     let bg = warmGrey;
     if(seed.background === 0)
       bg = greenGrey
@@ -44,8 +42,6 @@ const Auction: React.FC<AuctionProps> = props => {
       bg = coolGrey
     if(seed.background === 3)
       bg = coolestGray
-
-    console.log('Auction bg: ', bg.toString());
 
     dispatch(setStateBackgroundColor(bg));
   };

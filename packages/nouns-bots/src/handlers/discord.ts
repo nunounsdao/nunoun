@@ -23,9 +23,9 @@ export class DiscordAuctionLifecycleHandler implements IAuctionLifecycleHandler 
       const attachment = new Discord.MessageAttachment(png, attachmentName);
       const message = new Discord.MessageEmbed()
         .setTitle(`New Auction Discovered`)
-        .setDescription(`An auction has started for Noun #${auctionId}`)
+        .setDescription(`An auction has started for nuNoun #${auctionId}`)
         .setURL('https://nunoun.wtf')
-        .addField('Noun ID', auctionId, true)
+        .addField('nuNoun ID', auctionId, true)
         .attachFiles([attachment])
         .setImage(`attachment://${attachmentName}`)
         .setTimestamp();
