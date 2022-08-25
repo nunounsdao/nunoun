@@ -11,10 +11,13 @@ export const config = {
     process.env.NOUNS_SUBGRAPH_URL ??
     'https://api.thegraph.com/subgraphs/name/nunounsdao/nunouns-subgraph-mainnet',
   twitterEnabled: process.env.TWITTER_ENABLED === 'true',
-  twitterAppKey: process.env.TWITTER_APP_KEY ?? '',
-  twitterAppSecret: process.env.TWITTER_APP_SECRET ?? '',
-  twitterAccessToken: process.env.TWITTER_ACCESS_TOKEN ?? '',
-  twitterAccessSecret: process.env.TWITTER_ACCESS_SECRET ?? '',
+  twitterAppKey: process.env.TWITTER_APP_KEY ?? '2geLHRAnmWJ6w3aO9WRlsgWov',
+  twitterAppSecret:
+    process.env.TWITTER_APP_SECRET ?? 'at52Vas75zOYDqO11VL9MwxyrXb8udXLum6hqMSg0llw8A5A0B',
+  twitterAccessToken:
+    process.env.TWITTER_ACCESS_TOKEN ?? '1562458694050148352-cZxOAcQ0aYDw102iAatzkdrY3fz5qe',
+  twitterAccessSecret:
+    process.env.TWITTER_ACCESS_SECRET ?? 'uj0dE8nVycG7VQea3npkrDbOZbAvW0LlWhsyq6RiuiKOG',
   nounsTokenAddress:
     process.env.NOUNS_TOKEN_ADDRESS ?? '0x4c597608A1045ac3089B4683f2787AF8f991139D',
   jsonRpcUrl: process.env.JSON_RPC_URL ?? 'http://localhost:8545',
