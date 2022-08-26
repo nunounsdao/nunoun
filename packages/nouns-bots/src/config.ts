@@ -27,6 +27,6 @@ export const config = {
   discordPublicWebhookToken: process.env.DISCORD_PUBLIC_WEBHOOK_TOKEN ?? '',
   discordPublicWebhookId: process.env.DISCORD_PUBLIC_WEBHOOK_ID ?? '',
   pinataEnabled: process.env.PINATA_ENABLED === 'true',
-  pinataApiKey: process.env.PINATA_API_KEY ?? '',
+  pinataApiKey: process.env.PINATA_API_KEY ?? 'nothing',
   pinataApiSecretKey: process.env.PINATA_API_SECRET_KEY ?? '',
 };

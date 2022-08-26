@@ -1,6 +1,6 @@
 # @nouns/bots
 
-A bot that monitors for changes in Noun auction state and notifies everyone via Twitter and Discord.
+A bot that monitors for changes in Noun auction state and notifies everyone via Twitter and Discord. testing
 
 ## Install dependencies
 
