@@ -9,6 +9,20 @@ import {
 } from '../utils';
 
 export class TwitterAuctionLifecycleHandler implements IAuctionLifecycleHandler {
+  
+    async handleAuctionInfo(auctionId: number) {
+      //console.log(`handleAuctionInfo AuctionId ${auctionId}`);
+      //const user = await twitter.v2.userByUsername('nunounsbot');
+      //const userid = user.data.id;
+      //const userfollowers = await twitter.v2.followers(userid);
+      //console.log(`handleAuctionInfo: User ID: `, userid);
+      //console.log(`handleAuctionInfo: user ${user.data.name} has these followers: `, userfollowers);
+
+      //const tweet = await twitter.v2.tweet("setting nuBot")
+      //console.log(`handleAuctionInfo: Tweet Response: `, tweet.data);
+
+  }
+  
   /**
    * Tweet an image of the current noun alerting users
    * to the new auction and update the tweet reply id cache

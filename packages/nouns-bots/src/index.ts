@@ -51,6 +51,9 @@ async function processAuctionTick() {
   const cachedAuctionEndingSoon = await getAuctionEndingSoonCache();
   const lastAuctionBids = await getLastAuctionBids();
   const lastAuctionId = lastAuctionBids.id;
+  await Promise.all(
+    auctionLifecycleHandlers.map(h => h.handleAuctionInfo?.(lastAuctionId)),
+  );
   console.log(
     `processAuctionTick: cachedAuctionId(${cachedAuctionId}) lastAuctionId(${lastAuctionId})`,
   );

@@ -30,6 +30,7 @@ export interface TokenMetadata {
 }
 
 export interface IAuctionLifecycleHandler {
+  handleAuctionInfo(auctionId: number): Promise<void>;
   handleNewAuction(auctionId: number): Promise<void>;
   handleNewBid(auctionId: number, bid: Bid): Promise<void>;
   handleAuctionEndingSoon?(auctionId: number): Promise<void>;

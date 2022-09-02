@@ -12,6 +12,10 @@ import { Bid, IAuctionLifecycleHandler, Proposal, Vote } from '../types';
 export class DiscordAuctionLifecycleHandler implements IAuctionLifecycleHandler {
   constructor(public readonly discordClients: Discord.WebhookClient[]) {}
 
+  async handleAuctionInfo(auctionId: number) {
+    console.log(`handleAuctionInfo AuctionId ${auctionId}`);
+}
+
   /**
    * Send Discord message with an image of the current noun alerting users
    * @param auctionId The current auction ID
