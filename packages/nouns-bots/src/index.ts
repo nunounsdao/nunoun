@@ -4,12 +4,14 @@ import { getAllProposals, getLastAuctionBids } from './subgraph';
 import {
   getAuctionCache,
   getAuctionEndingSoonCache,
+  getAuctionEnding10minCache,
   getBidCache,
   getProposalCache,
   hasWarnedOfExpiry,
   setProposalExpiryWarningSent,
   updateAuctionCache,
   updateAuctionEndingSoonCache,
+  updateAuctionEnding10minCache,
   updateBidCache,
   updateProposalCache,
 } from './cache';
@@ -49,11 +51,9 @@ async function processAuctionTick() {
   const cachedAuctionId = await getAuctionCache();
   const cachedBidId = await getBidCache();
   const cachedAuctionEndingSoon = await getAuctionEndingSoonCache();
+  const cachedAuctionEnding10min = await getAuctionEnding10minCache();
   const lastAuctionBids = await getLastAuctionBids();
   const lastAuctionId = lastAuctionBids.id;
-  await Promise.all(
-    auctionLifecycleHandlers.map(h => h.handleAuctionInfo?.(lastAuctionId)),
-  );
   console.log(
     `processAuctionTick: cachedAuctionId(${cachedAuctionId}) lastAuctionId(${lastAuctionId})`,
   );
@@ -82,6 +82,17 @@ async function processAuctionTick() {
     await updateAuctionEndingSoonCache(lastAuctionId);
     await Promise.all(
       auctionLifecycleHandlers.map(h => h.handleAuctionEndingSoon?.(lastAuctionId)),
+    );
+  }
+
+  // check if auction ending (within 10 min)
+  const currentTimestamp10min = ~~(Date.now() / 1000); // second timestamp utc
+  const endTime19min = lastAuctionBids.endTime;
+  const secondsUntilAuctionEnds10nin = endTime19min - currentTimestamp10min;
+  if (secondsUntilAuctionEnds10nin < 10 * 60 && cachedAuctionEnding10min < lastAuctionId) {
+    await updateAuctionEnding10minCache(lastAuctionId);
+    await Promise.all(
+      auctionLifecycleHandlers.map(h => h.handleAuctionEnding10min?.(lastAuctionId)),
     );
   }
 }

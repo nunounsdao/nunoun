@@ -6,6 +6,7 @@ import { NounsTokenABI } from '@nouns/contracts';
 import Discord from 'discord.js';
 import axios from 'axios';
 
+
 /**
  * Redis Client
  */

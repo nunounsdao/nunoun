@@ -22,6 +22,11 @@ export const getReplyTweetIdKey = 'NOUNS_REPLY_TWEET_ID';
 export const getAuctionEndingSoonCacheKey = 'NOUNS_AUCTION_ENDING_SOON_CACHE';
 
 /**
+ * Key mapped to the latest auction id processed for auction ending soon
+ */
+ export const getAuctionEnding10minCacheKey = 'NOUNS_AUCTION_ENDING_10MIN_CACHE';
+
+/**
  * Key prefix for caching proposal records
  */
 export const getProposalCacheKeyPrefix = 'NOUNS_PROPOSAL_';
@@ -89,6 +94,27 @@ export async function getAuctionEndingSoonCache(): Promise<number> {
  */
 export async function updateAuctionEndingSoonCache(id: number) {
   await redis.set(getAuctionEndingSoonCacheKey, id);
+}
+
+
+/**
+ * Get the last auction id processed for ending soon
+ * @returns The last auction to be processed for ending soon
+ */
+ export async function getAuctionEnding10minCache(): Promise<number> {
+  const auctionId = await redis.get(getAuctionEnding10minCacheKey);
+  if (auctionId) {
+    return Number(auctionId);
+  }
+  return 0;
+}
+
+/**
+ * Update the auction ending soon cache with `id`
+ * @param id The auction id
+ */
+ export async function updateAuctionEnding10minCache(id: number) {
+  await redis.set(getAuctionEnding10minCacheKey, id);
 }
 
 /**
