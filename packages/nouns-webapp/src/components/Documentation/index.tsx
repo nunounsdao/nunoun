@@ -402,7 +402,7 @@ const Documentation = () => {
             <Accordion.Body>
               <p>
                 <Trans>
-                  nouncubator a community of solid nounish builders to be established by the nuNouns.
+                  NounCubator a team of solid nounish builders to be established by the nuNouns.
                   being passionate proliferators of cc0, nuNounders have chosen to allocate other Nouns extensions 
                   with nuNouns. Every 11th nuNoun for the first 5 years of the project (
                   nuNoun ids #1, #11, #21, #31 and so on) will be automatically sent to the Nouncubator
@@ -411,11 +411,50 @@ const Documentation = () => {
               </p>
               <p>
                 <Trans>
-                  nounCubator distributions don't interfere with the cadence of 180 minutes auctions.
+                  NounCubator distributions don't interfere with the cadence of 180 minutes auctions.
                   nuNouns are sent directly to the NounCubator multisig, and auctions continue on schedule
                   with the next available nuNoun ID.
                 </Trans>
               </p>
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="0" className={classes.accordionItem}>
+            <Accordion.Header className={classes.accordionHeader}>
+              <Trans>NounCubator</Trans>
+            </Accordion.Header>
+            <Accordion.Body>
+              <ul>
+              <p>
+                <Trans>
+                NounCubator is nuNoun’s accelerator to support nounish projects and it goes beyond simple funding. Here are the details to apply to the program:
+                </Trans>
+              </p>
+                
+                <br></br>
+                <h3>
+                <Trans>
+                Here are details around the program:
+                </Trans>
+              </h3>
+                <li>
+                  <Trans>We are looking for builders of all kinds. We deliberately have not spelled out any requirements or 
+                    criteria for applicants because we are looking and value a diverse group that can help propel the nouns ecosystem. 
+                    If you have an idea you would like feedback on, please join our Discord server and discuss on the #nouncubator channel. 
+                    No idea is too big or small!</Trans>
+                </li>
+                <li>
+                  <Trans>Program last approximately 6 weeks 
+                    (varies from project to project; your duration will be determined upon acceptance in the program).</Trans>
+                </li>
+                <li>
+                  <Trans>While in the program, the nounCubator will be very hands-on in providing you support to successfully get your concept off the ground. 
+                    Expect frequent and regular check-ins, 
+                    and occasional presentations to sharpen the concept and position it for success.</Trans>
+                </li>
+                <li>
+                <Link text="More info on nuNotion" url="https://nounpunks.notion.site/NounCubator-785c80c8494b44f386fd4cffe6730eb7" leavesPage={true} />
+                </li>
+              </ul>
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
