@@ -18,4 +18,7 @@ WORKDIR /app/packages/nouns-bots
 
 RUN yarn build
 
+RUN npm install -g redis
+RUN npm install -g docker-compose
+
 CMD [ "node",  "/app/packages/nouns-bots/dist/index.js"]
